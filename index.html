@@ -5,6 +5,19 @@
 <title>Análise de Luminosidade — Áreas de Convôo</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef3f8;color:#18304f}header{height:78px;background:#17375e;color:#fff;display:flex;align-items:center;padding:0 28px;gap:18px}.logo{width:54px;height:38px;border:4px solid #f7c400;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700}h1{font-size:25px;margin:0}header small{display:block;color:#b9d3f5;font-size:14px;margin-top:3px}main{max-width:1400px;margin:20px auto;padding:0 18px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}.step{background:#fff;border-radius:14px;padding:14px 18px;display:flex;gap:12px;align-items:center;box-shadow:0 2px 8px #0001}.step .n{width:34px;height:34px;border-radius:50%;background:#9ca8b5;color:#fff;display:grid;place-items:center;font-weight:bold}.step.active{background:#e5f0ff}.step.active .n{background:#1976d2}.card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 2px 10px #0002;margin-bottom:16px}.grid2{display:grid;grid-template-columns:1fr 1.25fr;gap:16px}label{font-weight:600;font-size:14px;display:block;margin-bottom:6px}input,button{font:inherit}input[type=number]{width:100%;padding:10px;border:1px solid #b8c4d0;border-radius:8px}.fields{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}button{border:0;border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:700}.primary{background:#1976d2;color:#fff}.secondary{background:#eef2f6;color:#24364d}.info{background:#e6f2ff;padding:12px;border-radius:9px;margin:14px 0}.warning{background:#fff7dd;padding:12px;border-radius:9px;margin:14px 0}.exclusionPanel{border:1px solid #cbd5df;border-radius:10px;padding:14px;margin-top:14px;background:#f8fafc}.exclusionControls{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.checklist{max-height:220px;overflow:auto;background:#fff;border:1px solid #d5dce3;border-radius:8px;padding:8px}.checkitem{display:flex;align-items:center;gap:7px;padding:6px 4px;font-size:14px}.checkitem input{width:auto}.excludedCell{background:#ffe8e6!important}.spotCell{background:#e5f0ff!important}.lockedCell{background:#edf1f5!important;color:#718096}.testData{border:1px dashed #d1a900;background:#fffbea;padding:12px;border-radius:9px;margin-top:14px}.testData b{color:#805b00}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid #c8d0d8;text-align:center;padding:5px}th{background:#f1f4f7}td button{width:30px;height:30px;padding:0;border:2px solid #788897;background:#fff;border-radius:5px}td.selected button{background:#79b8ff;border-color:#1976d2}.measure input{width:72px;padding:6px;text-align:center;border:1px solid #c4ccd5;border-radius:6px}.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px}.dot{width:18px;height:18px;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:5px;border:1px solid #777}.preview{background:#fffcc1;border:1px solid #ddd;padding:14px;min-height:430px;display:flex;align-items:center;justify-content:center}.deck{width:94%;height:390px;border:4px solid #111;position:relative;background:#fffdb0;display:flex;align-items:center;justify-content:center}.axis{position:absolute;height:100%;border-left:2px dashed #111;left:50%}.spot{width:185px;height:185px;border:4px solid #111;border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}.centerpoint{width:14px;height:14px;background:#111;border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}.mapgrid{position:absolute;inset:25px;display:grid;gap:7px}.mapdot{width:12px;height:12px;border-radius:50%;border:1px solid #555;justify-self:center;align-self:center}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{padding:14px;border:1px solid #d5dce3;border-radius:9px}.metric b{display:block;font-size:22px;margin-top:4px}.status{padding:14px;border-radius:10px;font-weight:700;text-align:center;font-size:18px}.ok{background:#dff3e5;color:#176b36}.bad{background:#ffe2e0;color:#9b2520}.hidden{display:none}.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:15px}.resultLayout{display:grid;grid-template-columns:1.35fr .9fr;gap:16px;align-items:start}.resultMapCard{border:1px solid #d5dce3;border-radius:10px;padding:14px;background:#fff}.resultMapWrap{position:relative;width:82%;max-width:560px;margin:auto;padding-left:38px;padding-top:30px}.resultMap{display:grid;grid-template-columns:repeat(var(--cols),1fr);grid-template-rows:repeat(var(--rows),1fr);border:3px solid #111;position:relative}.resultCell{position:relative;aspect-ratio:1/1;border:1px solid #c8d0d8;display:flex;align-items:center;justify-content:center;font-size:clamp(11px,1.35vw,17px);font-weight:500;min-width:0}.resultCell.empty{background:#fff}.resultCell.excluded{background:#edf1f5!important;color:#718096}.resultCell.excluded::after{content:'×';position:absolute;font-size:24px;font-weight:700;color:#718096}.resultColLabels{position:absolute;left:38px;right:0;top:4px;display:grid;grid-template-columns:repeat(var(--cols),1fr);text-align:center;font-weight:700}.resultRowLabels{position:absolute;left:0;top:30px;bottom:0;display:grid;grid-template-rows:repeat(var(--rows),1fr);align-items:center;font-weight:700}.resultAxis{position:absolute;top:0;bottom:0;border-left:2px dashed #111;pointer-events:none;z-index:4}.resultSpotCircle{position:absolute;border:4px solid #1269e5;border-radius:50%;pointer-events:none;z-index:5}.resultCenter{position:absolute;width:18px;height:18px;background:#1269e5;border:2px solid #fff;border-radius:50%;transform:translate(-50%,-50%);z-index:6}.resultScaleCard{border:1px solid #d5dce3;border-radius:10px;padding:14px;background:#fff;margin-bottom:12px}.resultScaleCard b{display:block;margin-bottom:8px}.colorScale{height:22px;border-radius:6px;background:linear-gradient(90deg,#f42d3a 0%,#f4502a 12%,#f87836 24%,#ff8c42 34%,#ffb43f 43%,#ffd12a 50%,#e6d44b 58%,#a8d96c 70%,#70c875 82%,#45b879 92%,#21a765 100%);border:1px solid #cbd5df}.scaleLabels{display:flex;justify-content:space-between;font-size:12px;margin-top:5px}.resultSide h3{margin-top:0}.legendItem{display:flex;align-items:center;gap:9px;margin:10px 0;font-size:14px}.legendSquare{width:22px;height:22px;border:1px solid #788897;background:#fff}.legendExcluded{width:22px;height:22px;border:1px dashed #788897;background:#edf1f5}.legendCircle{width:22px;height:22px;border:3px solid #1269e5;border-radius:50%}.legendCenter{width:16px;height:16px;border-radius:50%;background:#1269e5;margin:3px}.legendAxis{width:24px;border-top:2px dashed #111}.resultFinal{margin-top:12px}.exportNote{font-size:12px;color:#68788c;margin-top:10px}@media(max-width:900px){.grid2,.fields,.steps,.exclusionControls,.resultLayout{grid-template-columns:1fr 1fr}.summary{grid-template-columns:1fr}.resultCell{font-size:11px}.resultMapWrap{width:88%}}@media(max-width:650px){.grid2,.fields,.steps,.exclusionControls,.summary,.resultLayout{grid-template-columns:1fr}.resultMapWrap{width:92%}.resultCell{font-size:10px}}
+
+/* Results map: bounded square grid and independent text overlay. */
+.resultMapCard{min-width:0}
+.resultMapWrap{width:100%;max-width:none;height:clamp(220px,65vh,620px);padding:0;isolation:isolate}
+.resultMap{position:absolute;border:3px solid #111}
+.resultCell{aspect-ratio:auto;font-size:var(--map-font);min-height:0}
+.resultValue{position:relative;z-index:10;white-space:nowrap;line-height:1;text-shadow:0 0 2px #fff,0 0 3px #fff}
+.resultCell.excluded::after{z-index:7;opacity:.45}
+.resultColLabels,.resultRowLabels{font-size:var(--map-label-font);line-height:1}
+.resultColLabels{right:auto;top:auto}
+.resultRowLabels{bottom:auto;text-align:right}
+.resultAxis{bottom:auto;transform:translateX(-50%)}
+.resultCenter{pointer-events:none}
 </style>
 </head>
 <body>
@@ -43,7 +56,67 @@ function clearExclusions(){excluded.clear();excludedRows.clear();excludedCols.cl
 function updateMap(){let map=document.getElementById('map');if(!map)return;map.style.gridTemplateColumns=`repeat(${C},1fr)`;map.innerHTML='';for(let i=1;i<=Q;i++){let d=document.createElement('div');d.className='mapdot';if(spot.has(i))d.style.outline='3px solid #1976d2';if(excluded.has(i)){d.style.opacity='.35';d.style.background='transparent';d.style.borderStyle='dashed'}else if(vals[i]!==undefined){d.style.background=color(vals[i])}map.appendChild(d)}}
 function color(v){let x=Math.max(0,Math.min(20,Number(v)));const stops=[[0,244,45,58],[1.5,244,80,42],[3,255,140,66],[4.5,255,209,42],[6,168,217,108],[10,70,190,120],[20,33,167,101]];for(let i=0;i<stops.length-1;i++){let a=stops[i],b=stops[i+1];if(x<=b[0]){let t=(x-a[0])/(b[0]-a[0]);return `rgb(${Math.round(a[1]+t*(b[1]-a[1]))},${Math.round(a[2]+t*(b[2]-a[2]))},${Math.round(a[3]+t*(b[3]-a[3]))})`}}return 'rgb(33,167,101)'}
 function renderResults(){let missing=[...spot].filter(i=>vals[i]===undefined||Number.isNaN(vals[i]));if(missing.length)return false;rebuildExcludedSet();let considered=[];for(let i=1;i<=Q;i++)if(vals[i]!==undefined&&!excluded.has(i))considered.push(vals[i]);if(!considered.length)return false;let outside=considered.filter(v=>v<3||v>20).length,avg=considered.reduce((a,b)=>a+b,0)/considered.length,sv=[...spot].map(i=>vals[i]),avgSpot=sv.reduce((a,b)=>a+b,0)/sv.length,pct=outside/considered.length*100,pctOK=pct<=15,spotOK=avgSpot>avg;metrics.innerHTML=`<div class="metric">Pontos considerados<b>${considered.length}</b></div><div class="metric">Pontos fora<b>${outside}</b></div><div class="metric">Percentual fora<b>${pct.toFixed(2)}%</b></div><div class="metric">Média de luminância<b>${avg.toFixed(2)} lux</b></div><div class="metric">Média do espote<b>${avgSpot.toFixed(2)} lux</b></div>`;validation.innerHTML='<div class="info"><b>Critérios:</b> fora dos limites quando &lt; 3 lux ou &gt; 20 lux; limite percentual = 15%; média do espote deve ser superior à média de luminância. Pontos excluídos não participam dos cálculos.</div>';resultStatus.innerHTML=`<div class="status ${pctOK?'ok':'bad'}">Critério percentual: ${pctOK?'OK':'NÃO CONFORME — acima de 15%'}</div><div class="status ${spotOK?'ok':'bad'}" style="margin-top:8px">Critério do espote: ${spotOK?'OK':'NÃO CONFORME — média do espote ≤ média de luminância'}</div>`;return true}
-function buildResultMap(){let wrap=document.getElementById('resultMapWrap');if(!wrap)return;if(!wrap.offsetWidth){requestAnimationFrame(buildResultMap);return}wrap.innerHTML='';wrap.style.setProperty('--cols',C);wrap.style.setProperty('--rows',R);let labels=document.createElement('div');labels.className='resultColLabels';for(let c=1;c<=C;c++){let s=document.createElement('span');s.textContent='C'+c;labels.appendChild(s)}wrap.appendChild(labels);let rows=document.createElement('div');rows.className='resultRowLabels';for(let r=1;r<=R;r++){let s=document.createElement('span');s.textContent='L'+r;rows.appendChild(s)}wrap.appendChild(rows);let grid=document.createElement('div');grid.className='resultMap';grid.style.setProperty('--cols',C);grid.style.setProperty('--rows',R);for(let i=1;i<=Q;i++){let d=document.createElement('div');d.className='resultCell';let v=vals[i];if(excluded.has(i)){d.classList.add('excluded');d.textContent=v===undefined?'':formatVal(v)}else if(v===undefined){d.classList.add('empty');d.textContent=''}else{d.style.background=color(v);d.textContent=formatVal(v)}grid.appendChild(d)}wrap.appendChild(grid);let rect=grid.getBoundingClientRect(),cellW=rect.width/C,cellH=rect.height/R;let centerR=R/2,centerC=C/2;let centerX=38+(centerC-.5)*cellW,centerY=30+(centerR-.5)*cellH;if(spot.size){let pts=[...spot].map(i=>({r:Math.ceil(i/C),c:((i-1)%C)+1}));centerR=pts.reduce((a,p)=>a+p.r,0)/pts.length;centerC=pts.reduce((a,p)=>a+p.c,0)/pts.length;centerX=38+(centerC-.5)*cellW;centerY=30+(centerR-.5)*cellH;let maxD=0;pts.forEach(p=>{let dx=(p.c-centerC)*cellW,dy=(p.r-centerR)*cellH;maxD=Math.max(maxD,Math.sqrt(dx*dx+dy*dy))});let radius=maxD*1.06;let circle=document.createElement('div');circle.className='resultSpotCircle';circle.style.width=(radius*2)+'px';circle.style.height=(radius*2)+'px';circle.style.left=(centerX-radius)+'px';circle.style.top=(centerY-radius)+'px';wrap.appendChild(circle);let cp=document.createElement('div');cp.className='resultCenter';cp.style.left=centerX+'px';cp.style.top=centerY+'px';wrap.appendChild(cp)}let axis=document.createElement('div');axis.className='resultAxis';axis.style.left=centerX+'px';wrap.appendChild(axis)}
+function buildResultMap(){
+ const wrap=document.getElementById('resultMapWrap');
+ if(!wrap)return;
+ if(!wrap.offsetWidth){requestAnimationFrame(buildResultMap);return}
+ wrap.innerHTML='';
+ wrap.style.setProperty('--cols',C);wrap.style.setProperty('--rows',R);
+ const labels=document.createElement('div');labels.className='resultColLabels';
+ for(let c=1;c<=C;c++){const label=document.createElement('span');label.textContent='C'+c;labels.appendChild(label)}
+ const rowLabels=document.createElement('div');rowLabels.className='resultRowLabels';
+ for(let r=1;r<=R;r++){const label=document.createElement('span');label.textContent='L'+r;rowLabels.appendChild(label)}
+ wrap.append(labels,rowLabels);
+ const grid=document.createElement('div');grid.className='resultMap';
+ for(let i=1;i<=R*C;i++){
+  const cell=document.createElement('div');cell.className='resultCell';
+  const value=vals[i];
+  if(excluded.has(i))cell.classList.add('excluded');
+  else if(i>Q||value===undefined)cell.classList.add('empty');
+  else cell.style.background=color(value);
+  const text=document.createElement('span');text.className='resultValue';
+  text.textContent=i>Q||value===undefined?'':formatVal(value);
+  cell.appendChild(text);grid.appendChild(cell);
+ }
+ wrap.appendChild(grid);
+ // Reserve label space, then fit both dimensions without changing the card height.
+ const labelFont=12,padding=8,border=3;
+ const gutterX=Math.ceil(('L'+R).length*labelFont*.65)+padding;
+ const gutterY=labelFont+padding;
+ const cellSize=Math.max(0,Math.min((wrap.clientWidth-gutterX-2*border)/C,(wrap.clientHeight-gutterY-2*border)/R));
+ grid.style.width=(C*cellSize+2*border)+'px';grid.style.height=(R*cellSize+2*border)+'px';
+ grid.style.left=(gutterX+(wrap.clientWidth-gutterX-C*cellSize-2*border)/2)+'px';
+ grid.style.top=(gutterY+(wrap.clientHeight-gutterY-R*cellSize-2*border)/2)+'px';
+ const longest=Math.max(3,...Object.values(vals).map(v=>formatVal(v).length));
+ wrap.style.setProperty('--map-font',Math.min(17,cellSize*.72,cellSize/(longest*.62))+'px');
+ wrap.style.setProperty('--map-label-font',Math.min(labelFont,cellSize*.7,cellSize/(('C'+C).length*.65))+'px');
+ const wrapRect=wrap.getBoundingClientRect(),rect=grid.getBoundingClientRect();
+ const first=grid.firstElementChild.getBoundingClientRect();
+ const x=first.left-wrapRect.left,y=first.top-wrapRect.top;
+ const cellW=first.width,cellH=first.height;
+ Object.assign(labels.style,{left:x+'px',top:(rect.top-wrapRect.top-gutterY)+'px',width:(cellW*C)+'px',height:gutterY+'px'});
+ Object.assign(rowLabels.style,{left:(rect.left-wrapRect.left-gutterX)+'px',top:y+'px',width:(gutterX-padding)+'px',height:(cellH*R)+'px'});
+ let centerX=x+cellW*C/2,centerY=y+cellH*R/2;
+ if(spot.size){
+  const points=[...spot].map(i=>{const r=grid.children[i-1].getBoundingClientRect();return {x:r.left+r.width/2-wrapRect.left,y:r.top+r.height/2-wrapRect.top}});
+  centerX=points.reduce((sum,p)=>sum+p.x,0)/points.length;
+  centerY=points.reduce((sum,p)=>sum+p.y,0)/points.length;
+  const radius=Math.max(Math.min(cellW,cellH)/2,...points.map(p=>Math.hypot(p.x-centerX,p.y-centerY)*1.06));
+  const circle=document.createElement('div');circle.className='resultSpotCircle';
+  Object.assign(circle.style,{width:radius*2+'px',height:radius*2+'px',left:centerX-radius+'px',top:centerY-radius+'px'});
+  const center=document.createElement('div');center.className='resultCenter';
+  Object.assign(center.style,{left:centerX+'px',top:centerY+'px'});
+  wrap.append(circle,center);
+ }
+ const axis=document.createElement('div');axis.className='resultAxis';
+ Object.assign(axis.style,{left:centerX+'px',top:y+'px',height:cellH*R+'px'});wrap.appendChild(axis);
+}
+let resultMapFrame=0;
+const resultMapObserver=new ResizeObserver(()=>{
+ if(stage!==4)return;
+ cancelAnimationFrame(resultMapFrame);resultMapFrame=requestAnimationFrame(buildResultMap);
+});
+resultMapObserver.observe(document.getElementById('resultMapWrap'));
 function formatVal(v){return Number.isInteger(v)?String(v):String(v).replace('.',',')}
 function goResults(){if(!renderResults()){let missing=[...spot].filter(i=>vals[i]===undefined||Number.isNaN(vals[i]));if(missing.length){alert(`ESPOTE INCOMPLETO: ${missing.length} ponto(s) do espote sem medição.`);return}alert('Não há pontos válidos para análise.');return}applyStage(4)}
 function backToMeasures(){buildMeasures();buildExclusionControls();applyStage(3)}
